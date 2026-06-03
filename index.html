@@ -9,7 +9,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','876981157042053');fbq('track','PageView');
+fbq('init','876981157042053');
+fbq('track','PageView');
+fbq('track','ViewContent',{content_name:'INMEST Glow Beam IPL',content_ids:['1264'],content_type:'product',value:76.00,currency:'EUR'});
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=876981157042053&ev=PageView&noscript=1"/></noscript>
 <style>
@@ -39,10 +41,28 @@ body{font-family:var(--font-b);background:var(--bg);color:var(--text);font-size:
 .ann{
   background:var(--rose-d);color:#fff;
   font-family:var(--font-b);font-size:11px;font-weight:600;
-  letter-spacing:0.12em;text-align:center;padding:10px 16px;
+  letter-spacing:0.12em;text-align:center;padding:8px 16px;
   text-transform:uppercase;
 }
+.ann-inner{
+  max-width:860px;margin:0 auto;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
 .ann em{color:var(--champ);font-style:normal}
+
+/* DESKTOP LAYOUT */
+@media(min-width:768px){
+  .ann{font-size:12px;padding:9px 24px}
+  .hero{display:flex;align-items:stretch;max-width:1100px;margin:0 auto}
+  .hero-img{flex:1 1 50%;order:2}
+  .hero-img img{height:100%;object-fit:cover}
+  .hero-body{flex:1 1 50%;order:1;padding:40px 48px 44px;border-bottom:none;border-right:3px solid var(--rose)}
+  .order-section{padding:40px 48px}
+  .order-box{max-width:560px;margin:0 auto}
+  .sec,.sec-bg,.sec-champ,.sec-rose{padding:52px 48px}
+  .sec>*,.sec-bg>*,.sec-champ>*,.sec-rose>*{max-width:780px;margin-left:auto;margin-right:auto}
+  h1{font-size:clamp(28px,3.5vw,44px)}
+}
 
 /* HERO */
 .hero{background:var(--bg)}
@@ -366,7 +386,7 @@ h2{
 </head>
 <body>
 
-<div class="ann">&#9733; Над 12 000+ доволни клиентки &nbsp;&#183;&nbsp; <em>-67% промо цена</em> &nbsp;&#183;&nbsp; Наложен платеж</div>
+<div class="ann"><div class="ann-inner">&#9733; Над 12 000+ доволни клиентки &nbsp;&#183;&nbsp; <em>-67% промо цена</em> &nbsp;&#183;&nbsp; Наложен платеж</div></div>
 
 <!-- HERO -->
 <section class="hero">
@@ -396,7 +416,7 @@ h2{
       </div>
       <div class="ps-note">Спестяваш 154&#8364; &#8212; вместо 1 224&#8364;/год. за бръсначки и лазер</div>
     </div>
-    <button class="btn-cta" onclick="document.getElementById('order1').scrollIntoView({behavior:'smooth'})">
+    <button class="btn-cta" onclick="if(typeof fbq!=='undefined'){fbq('track','InitiateCheckout',{content_name:'INMEST Glow Beam IPL',content_ids:['1264'],content_type:'product',value:76.00,currency:'EUR'});}document.getElementById('order1').scrollIntoView({behavior:'smooth'})">
       &#10003;&nbsp; ПОРЪЧАЙ С НАЛОЖЕН ПЛАТЕЖ
     </button>
     <div class="chips">
